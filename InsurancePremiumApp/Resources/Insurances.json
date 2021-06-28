@@ -2,7 +2,7 @@
   {
     "Id": "c037ce05-2178-4f88-9d41-dc1fa69ddffe",
     "Name": "Standard",
-    "EmployeePremiumPerYear": "1000",
-    "DependentPremiumPerYear": "500"
+    "EmployeePremiumPerYear": 1000,
+    "DependentPremiumPerYear": 500
   }
 ]

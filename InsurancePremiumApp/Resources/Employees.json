@@ -4,7 +4,7 @@
     "FirstName": "Joe",
     "MiddleName": "Mo",
     "LastName": "Schmo",
-    "GrossAmountPerPaycheck": "2000",
+    "GrossAmountPerPaycheck": 2000,
     "DependentsOnInsurance": [
       {
         "Id": "aa5c3a0d-7a0e-4ad8-b6b4-0859ac45d2ec",
