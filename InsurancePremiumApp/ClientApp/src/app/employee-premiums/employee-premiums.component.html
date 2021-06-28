@@ -2,7 +2,7 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!employee"><em>Loading...</em></p>
+<p *ngIf="loadingMessage"><em>{{ loadingMessage }}</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employee">
   <thead>
