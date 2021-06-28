@@ -22,9 +22,16 @@ namespace InsurancePremiumApp.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public Employee Get([FromRoute] Guid id)
+        public Employee GetEmployeeByEmployeeId([FromRoute] Guid id)
         {
             return _employeeService.GetEmployeeByEmployeeId(id);
+        }
+
+        [HttpGet]
+        [Route("{id}/Insurances")]
+        public List<Insurance> GetEmployeeInsurancesByEmployeeId([FromRoute] Guid id)
+        {
+            return _employeeService.GetEmployeeInsurancesByEmployeeId(id);
         }
     }
 }

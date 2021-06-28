@@ -121,6 +121,9 @@
   <data name="Employees" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Employees.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="EmployeesInsurances" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\EmployeesInsurances.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Insurances" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Insurances.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

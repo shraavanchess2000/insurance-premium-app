@@ -73,6 +73,16 @@ namespace InsurancePremiumApp {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] EmployeesInsurances {
+            get {
+                object obj = ResourceManager.GetObject("EmployeesInsurances", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] Insurances {
             get {
                 object obj = ResourceManager.GetObject("Insurances", resourceCulture);

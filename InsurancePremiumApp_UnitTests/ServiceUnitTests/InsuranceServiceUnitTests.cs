@@ -19,7 +19,7 @@ namespace InsurancePremiumApp_UnitTests.ServiceUnitTests
         }
 
         [Test]
-        public void GetById_GetsRecordWhenIdMatchesAnExistingRecord()
+        public void GetInsuranceByInsuranceId_GetsInsuranceRecordWhenIdMatchesAnExistingInsuranceRecord()
         {
             var id = new Guid("c037ce05-2178-4f88-9d41-dc1fa69ddffe");
 
@@ -37,7 +37,7 @@ namespace InsurancePremiumApp_UnitTests.ServiceUnitTests
         }
 
         [Test]
-        public void GetById_GetsNullWhenIdDoesNotMatchAnExistingRecord()
+        public void GetInsuranceByInsuranceId_GetsNullWhenIdDoesNotMatchAnExistingInsuranceRecord()
         {
             var id = Guid.Empty;
 

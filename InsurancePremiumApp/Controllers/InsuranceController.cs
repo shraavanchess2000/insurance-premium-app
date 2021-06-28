@@ -21,7 +21,7 @@ namespace InsurancePremiumApp.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public Insurance Get([FromRoute] Guid id)
+        public Insurance GetInsuranceByInsuranceId([FromRoute] Guid id)
         {
             return _insuranceService.GetInsuranceByInsuranceId(id);
         }
