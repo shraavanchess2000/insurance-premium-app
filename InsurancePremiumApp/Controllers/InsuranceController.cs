@@ -23,7 +23,7 @@ namespace InsurancePremiumApp.Controllers
         [Route("{id}")]
         public Insurance Get([FromRoute] Guid id)
         {
-            return _insuranceService.GetById(id);
+            return _insuranceService.GetInsuranceByInsuranceId(id);
         }
     }
 }

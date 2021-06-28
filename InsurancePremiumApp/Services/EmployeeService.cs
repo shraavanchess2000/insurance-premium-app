@@ -10,12 +10,12 @@ namespace InsurancePremiumApp.Services
 {
     public interface IEmployeeService
     {
-        Employee GetById(Guid id);
+        Employee GetEmployeeByEmployeeId(Guid id);
     }
 
     public class EmployeeService : IEmployeeService
     {
-        public Employee GetById(Guid id)
+        public Employee GetEmployeeByEmployeeId(Guid id)
         {
             var employees = JsonConvert.DeserializeObject<List<Employee>>(Encoding.UTF8.GetString(Resources.Employees));
 

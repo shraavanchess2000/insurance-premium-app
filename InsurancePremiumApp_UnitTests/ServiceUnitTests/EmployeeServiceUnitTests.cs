@@ -49,7 +49,7 @@ namespace InsurancePremiumApp_UnitTests.ServiceUnitTests
                 }
             };
 
-            var actual = service.GetById(id);
+            var actual = service.GetEmployeeByEmployeeId(id);
 
             Assert.AreEqual(JsonConvert.SerializeObject(expected), JsonConvert.SerializeObject(actual));
         }
@@ -61,7 +61,7 @@ namespace InsurancePremiumApp_UnitTests.ServiceUnitTests
 
             Employee expected = null;
 
-            var actual = service.GetById(id);
+            var actual = service.GetEmployeeByEmployeeId(id);
 
             Assert.AreEqual(expected, actual);
         }

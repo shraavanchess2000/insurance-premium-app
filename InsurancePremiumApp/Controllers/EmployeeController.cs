@@ -24,7 +24,7 @@ namespace InsurancePremiumApp.Controllers
         [Route("{id}")]
         public Employee Get([FromRoute] Guid id)
         {
-            return _employeeService.GetById(id);
+            return _employeeService.GetEmployeeByEmployeeId(id);
         }
     }
 }

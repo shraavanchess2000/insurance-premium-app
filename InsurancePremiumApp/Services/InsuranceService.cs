@@ -10,12 +10,12 @@ namespace InsurancePremiumApp.Services
 {
     public interface IInsuranceService
     {
-        Insurance GetById(Guid id);
+        Insurance GetInsuranceByInsuranceId(Guid id);
     }
 
     public class InsuranceService : IInsuranceService
     {
-        public Insurance GetById(Guid id)
+        public Insurance GetInsuranceByInsuranceId(Guid id)
         {
             var insurances = JsonConvert.DeserializeObject<List<Insurance>>(Encoding.UTF8.GetString(Resources.Insurances));
 

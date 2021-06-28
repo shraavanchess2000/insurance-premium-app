@@ -31,7 +31,7 @@ namespace InsurancePremiumApp_UnitTests.ServiceUnitTests
                 DependentPremiumPerYear = 500
             };
 
-            var actual = service.GetById(id);
+            var actual = service.GetInsuranceByInsuranceId(id);
 
             Assert.AreEqual(JsonConvert.SerializeObject(expected), JsonConvert.SerializeObject(actual));
         }
@@ -43,7 +43,7 @@ namespace InsurancePremiumApp_UnitTests.ServiceUnitTests
 
             Employee expected = null;
 
-            var actual = service.GetById(id);
+            var actual = service.GetInsuranceByInsuranceId(id);
 
             Assert.AreEqual(expected, actual);
         }
