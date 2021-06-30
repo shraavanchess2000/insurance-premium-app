@@ -15,6 +15,18 @@ code {
   border-color: #1861ac;
 }
 
-.centertext {
-    text-align: center
+.center-text {
+  text-align: center;
+}
+
+.padding-top-1-percent {
+  padding-top: 1%;
+}
+
+.padding-top-3-percent {
+    padding-top: 3%;
+}
+
+.padding-bottom-1-percent {
+  padding-bottom: 1%;
 }

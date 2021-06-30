@@ -1,0 +1,45 @@
+<div class="center-text padding-bottom-1-percent">
+  <h1 id="tableLabel">View Employee Premiums</h1>
+
+  <p>View premiums and resulting net pay of an existing employee.</p>
+
+  <form #idForm="ngForm" (ngSubmit)="onSubmit(); idForm.reset()">
+    <div class="form-group">
+      <label for="employeeId" class="row justify-content-center">Enter Employee ID.</label>
+      <div class="row justify-content-center">
+        <input type="text" id="employeeId" aria-describedby="employeeIdNote" placeholder="Employee ID" size="36" pattern="^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$" required [(ngModel)]="employeeId" name="employeeId">
+      </div>
+      <div class="row justify-content-center">
+        <small id="employeeIdNote" class="form-text text-muted">Employee ID must be a valid GUID.</small>
+      </div>
+    </div>
+    <div class="row justify-content-center padding-bottom-1-percent">
+      <button class="btn btn-primary" type="submit" [disabled]="!idForm.form.valid">Submit</button>
+    </div>
+  </form>
+</div>
+
+<p *ngIf="loadingMessage"><em>{{ loadingMessage }}</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employee">
+  <thead>
+    <tr>
+      <th>Name of Employee</th>
+      <th>Cost of Premiums per Year</th>
+      <th>Net Pay per Year</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ employee.firstName }} {{ employee.middleName }} {{ employee.lastName }}</td>
+      <td>{{ premiumsCost }}</td>
+      <td>{{ netPay }}</td>
+    </tr>
+  </tbody>
+</table>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employeeNotFoundMessage">
+  <tbody>
+    <tr>
+      <td>{{ employeeNotFoundMessage }}</td>
+    </tr>
+  </tbody>
+</table>

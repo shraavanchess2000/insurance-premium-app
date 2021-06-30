@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
-import { EmployeePremiumsComponent } from './employee-premiums/employee-premiums.component';
+import { ViewEmployeePremiumsComponent } from './view-employee-premiums/view-employee-premiums.component';
+import { PreviewPremiumsComponent } from './preview-premiums/preview-premiums.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EmployeePremiumsComponent } from './employee-premiums/employee-premiums
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    EmployeePremiumsComponent
+    ViewEmployeePremiumsComponent,
+    PreviewPremiumsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -25,7 +27,8 @@ import { EmployeePremiumsComponent } from './employee-premiums/employee-premiums
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'employee-premiums', component: EmployeePremiumsComponent },
+      { path: 'preview-premiums', component: PreviewPremiumsComponent },
+      { path: 'view-employee-premiums', component: ViewEmployeePremiumsComponent },
     ])
   ],
   providers: [],
