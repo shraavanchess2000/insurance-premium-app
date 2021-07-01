@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { EmployeeInsuranceService } from '../services/employee-insurance.service';
 
+import { Employee } from '../models/employee';
+
 @Component({
   selector: 'app-view-employee-premiums',
   templateUrl: './view-employee-premiums.component.html'
@@ -29,7 +31,7 @@ export class ViewEmployeePremiumsComponent {
       else {
         this.employeeNotFoundMessage = null;
 
-        [this.premiumsCost, this.netPay] = this.employeeInsuranceService.calculatePremiums(this.employee);
+        [this.premiumsCost, this.netPay] = this.employeeInsuranceService.calculatePremiumsForExistingEmployee(this.employee);
       }
 
       this.loadingMessage = null;

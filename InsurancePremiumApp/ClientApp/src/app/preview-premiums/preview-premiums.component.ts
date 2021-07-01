@@ -6,28 +6,26 @@ import { EmployeeInsuranceService } from '../services/employee-insurance.service
   templateUrl: './preview-premiums.component.html'
 })
 export class PreviewPremiumsComponent {
-  public employee: Employee;
-  public employeeNotFoundMessage: string;
+  public employeeName: string;
+  public employeeNameInput: string;
   public loadingMessage: string;
+  public netPay: number;
+  public numberOfDependentsWithNamesStartingWithA: number;
+  public numberOfOtherDependents: number;
+  public premiumsCost: number;
+
+  private grossAmountPerPaycheck: number = 2000;
 
   constructor(private employeeInsuranceService: EmployeeInsuranceService) {
   }
 
-  ngOnInit() {
+  public onSubmit() {
     this.loadingMessage = "Loading...";
 
-    this.employeeInsuranceService.getEmployee("fc84ef57-562d-4073-a334-731b94662a3f").subscribe(result => {
-      this.employee = result;
+    [this.premiumsCost, this.netPay] = this.employeeInsuranceService.calculatePremiumsForPotentialEmployee(this.employeeNameInput, this.numberOfDependentsWithNamesStartingWithA, this.numberOfOtherDependents, this.grossAmountPerPaycheck);
 
-      if (!this.employee) {
-        this.employeeNotFoundMessage = "Employee with given ID was not found.";
-      }
+    this.employeeName = this.employeeNameInput;
 
-      else {
-        this.employeeNotFoundMessage = null;
-      }
-
-      this.loadingMessage = null;
-    })
+    this.loadingMessage = null;
   }
 }

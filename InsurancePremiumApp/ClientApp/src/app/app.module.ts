@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
 import { ViewEmployeePremiumsComponent } from './view-employee-premiums/view-employee-premiums.component';
 import { PreviewPremiumsComponent } from './preview-premiums/preview-premiums.component';
 
@@ -16,7 +15,6 @@ import { PreviewPremiumsComponent } from './preview-premiums/preview-premiums.co
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
     ViewEmployeePremiumsComponent,
     PreviewPremiumsComponent
   ],
@@ -26,7 +24,6 @@ import { PreviewPremiumsComponent } from './preview-premiums/preview-premiums.co
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'preview-premiums', component: PreviewPremiumsComponent },
       { path: 'view-employee-premiums', component: ViewEmployeePremiumsComponent },
     ])

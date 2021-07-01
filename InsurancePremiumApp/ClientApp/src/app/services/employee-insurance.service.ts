@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 
+import { Employee } from '../models/employee';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +21,7 @@ export class EmployeeInsuranceService {
     return this.httpClient.get<Employee>(this.baseUrl + 'employee/' + id);
   }
 
-  calculatePremiums(employee: Employee): [number, number] {
+  calculatePremiumsForExistingEmployee(employee: Employee): [number, number] {
     let premiumsCost: number;
     let employeeFullName: string = employee.firstName + employee.middleName + employee.lastName;
 
@@ -44,6 +46,26 @@ export class EmployeeInsuranceService {
     }
 
     let netPay: number = employee.grossAmountPerPaycheck * 26 - premiumsCost;
+
+    return [premiumsCost, netPay];
+  }
+
+  calculatePremiumsForPotentialEmployee(employeeName: string, numberOfDependentsWithNamesStartingWithA: number, numberOfOtherDependents: number, grossAmountPerPaycheck: number): [number, number] {
+    let premiumsCost: number;
+
+    if (employeeName.startsWith("A")) {
+      premiumsCost = 1000 * 0.9;
+    }
+
+    else {
+      premiumsCost = 1000;
+    }
+
+    premiumsCost = premiumsCost + (500 * 0.9) * numberOfDependentsWithNamesStartingWithA;
+
+    premiumsCost = premiumsCost + 500 * numberOfOtherDependents;
+
+    let netPay: number = grossAmountPerPaycheck * 26 - premiumsCost;
 
     return [premiumsCost, netPay];
   }

@@ -1,25 +1,43 @@
-<h1 id="tableLabel">Preview Premiums</h1>
+<div class="center-text padding-bottom-1-percent">
+  <h1 id="tableLabel">Preview Premiums</h1>
 
-<p>Preview premiums and resulting net pay of a potential employee.</p>
+  <p>Preview premiums and resulting net pay of a potential employee.</p>
+
+  <form #idForm="ngForm" (ngSubmit)="onSubmit(); idForm.reset()">
+    <div class="form-group">
+      <label for="employeeNameInput" class="row justify-content-center padding-top-1-percent">Enter Name of Potential Employee.</label>
+      <div class="row justify-content-center">
+        <input type="text" id="employeeNameInput" placeholder="Employee Name" size="50" required [(ngModel)]="employeeNameInput" name="employeeNameInput">
+      </div>
+      <label for="numberOfDependentsWithNamesStartingWithA" class="row justify-content-center padding-top-3-percent">Enter Number of Dependents Whose Names Start With 'A'.</label>
+      <div class="row justify-content-center">
+        <input type="text" id="numberOfDependentsWithNamesStartingWithA" placeholder="Number of Dependents Whose Names Start With 'A'" size="50" pattern="^[1-9]+[0-9]*$" required [(ngModel)]="numberOfDependentsWithNamesStartingWithA" name="numberOfDependentsWithNamesStartingWithA">
+      </div>
+      <label for="numberOfOtherDependents" class="row justify-content-center padding-top-3-percent">Enter Number of Other Dependents.</label>
+      <div class="row justify-content-center">
+        <input type="text" id="numberOfOtherDependents" placeholder="Number of Other Dependents" size="50" pattern="^[1-9]+[0-9]*$" required [(ngModel)]="numberOfOtherDependents" name="numberOfOtherDependents">
+      </div>
+    </div>
+    <div class="row justify-content-center padding-bottom-1-percent">
+      <button class="btn btn-primary" type="submit" [disabled]="!idForm.form.valid">Submit</button>
+    </div>
+  </form>
+</div>
 
 <p *ngIf="loadingMessage"><em>{{ loadingMessage }}</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employee">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="premiumsCost && netPay">
   <thead>
     <tr>
-      <th>Name</th>
-    </tr>
+      <th>Name of Employee</th>
+      <th>Cost of Premiums per Year</th>
+      <th>Net Pay per Year</th>
   </thead>
   <tbody>
     <tr>
-      <td>{{ employee.firstName }} {{ employee.middleName }} {{ employee.lastName }}</td>
-    </tr>
-  </tbody>
-</table>
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employeeNotFoundMessage">
-  <tbody>
-    <tr>
-      <td>{{ employeeNotFoundMessage }}</td>
+      <td>{{ employeeName }}</td>
+      <td>{{ premiumsCost }}</td>
+      <td>{{ netPay }}</td>
     </tr>
   </tbody>
 </table>
