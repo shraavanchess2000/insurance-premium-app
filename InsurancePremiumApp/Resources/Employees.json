@@ -1,0 +1,23 @@
+[
+  {
+    "Id": "fc84ef57-562d-4073-a334-731b94662a3f",
+    "FirstName": "Joe",
+    "MiddleName": "Mo",
+    "LastName": "Schmo",
+    "GrossAmountPerPaycheck": 2000,
+    "DependentsOnInsurance": [
+      {
+        "Id": "aa5c3a0d-7a0e-4ad8-b6b4-0859ac45d2ec",
+        "FirstName": "Joey",
+        "MiddleName": "Child",
+        "LastName": "Schmo"
+      },
+      {
+        "Id": "bdf3dcc1-71f2-49e2-9875-27eabbffedf4",
+        "FirstName": "Anne",
+        "MiddleName": "Spouse",
+        "LastName": "Schmo"
+      }
+    ]
+  }
+]
